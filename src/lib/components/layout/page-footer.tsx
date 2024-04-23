@@ -10,7 +10,9 @@ const PageFooter: FC = () => {
         </a>
         .
       </p>
-      <p className="text-muted">Handcrafted With</p>
+      <p className="text-muted">
+        Handcrafted With <i className="text-danger" data-feather="heart"></i>
+      </p>
     </footer>
   );
 };

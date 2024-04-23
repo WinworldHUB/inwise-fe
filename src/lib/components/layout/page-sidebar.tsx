@@ -1,12 +1,13 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 const PageSideBar: FC = () => {
   return (
     <nav className="sidebar">
       <div className="sidebar-header">
-        <a href="blank-page.html#" className="sidebar-brand">
-          Noble<span>UI</span>
-        </a>
+        <Link to="" className="sidebar-brand">
+          In<span>wise</span>
+        </Link>
         <div className="sidebar-toggler not-active">
           <span />
           <span />
@@ -16,7 +17,7 @@ const PageSideBar: FC = () => {
       <div className="sidebar-body">
         <ul className="nav">
           <li className="nav-item nav-category">Main</li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a href="../../dashboard.html" className="nav-link">
               <i className="link-icon" data-feather="box" />
               <span className="link-title">Dashboard</span>

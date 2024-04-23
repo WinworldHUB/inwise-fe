@@ -1,11 +1,15 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 const PageNavigation: FC = () => {
   return (
     <nav className="navbar">
-      <a href="blank-page.html#" className="sidebar-toggler" />
+      <Link to="" className="sidebar-toggler">
+        <i data-feather="menu"></i>
+      </Link>
       <div className="navbar-content">
-        <form className="search-form">
+        <h2 className="pt-2">Page title</h2>
+        {/* <form className="search-form">
           <div className="input-group">
             <div className="input-group-text" />
             <input
@@ -28,6 +32,7 @@ const PageNavigation: FC = () => {
               aria-expanded="false"
             >
               <span className="ms-1 me-1 d-none d-md-inline-block">
+                <i className="flag-icon flag-icon-us" title="us" id="us1" />{" "}
                 English
               </span>
             </a>
@@ -66,9 +71,12 @@ const PageNavigation: FC = () => {
             />
             <div className="dropdown-menu p-0" aria-labelledby="appsDropdown">
               <div className="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-                <p className="mb-0 fw-bold">Web Apps</p>
-                <a href="javascript:;" className="text-muted">
-                  Edit
+                <p className="mb-0 fw-bold">
+                  {" "}
+                  <i className="feather feather-grid" /> Web Apps
+                </p>
+                <a href="/" className="text-muted">
+                  <i data-feather="mail" /> Edit
                 </a>
               </div>
               <div className="row g-0 p-1">
@@ -376,7 +384,7 @@ const PageNavigation: FC = () => {
               </ul>
             </div>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </nav>
   );
