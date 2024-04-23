@@ -16,14 +16,37 @@ const PageSideBar: FC = () => {
       </div>
       <div className="sidebar-body">
         <ul className="nav">
-          <li className="nav-item nav-category">Main</li>
           <li className="nav-item active">
-            <a href="../../dashboard.html" className="nav-link">
+            <Link to="" className="nav-link">
               <i className="link-icon" data-feather="box" />
               <span className="link-title">Dashboard</span>
-            </a>
+            </Link>
           </li>
-          <li className="nav-item nav-category">web apps</li>
+          <li className="nav-item">
+            <Link to="" className="nav-link">
+              <i className="link-icon" data-feather="user" />
+              <span className="link-title">Profile</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="" className="nav-link">
+              <i className="link-icon" data-feather="users" />
+              <span className="link-title">Partners</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="" className="nav-link">
+              <i className="link-icon" data-feather="book-open" />
+              <span className="link-title">Accounting</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="" className="nav-link">
+              <i className="link-icon" data-feather="settings" />
+              <span className="link-title">Business settings</span>
+            </Link>
+          </li>
+          {/* <li className="nav-item nav-category">web apps</li>
           <li className="nav-item">
             <a
               className="nav-link"
@@ -534,7 +557,7 @@ const PageSideBar: FC = () => {
               <i className="link-icon" data-feather="hash" />
               <span className="link-title">Documentation</span>
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
