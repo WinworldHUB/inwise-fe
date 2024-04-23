@@ -1,7 +1,17 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
-const PageSideBar: FC = () => {
+interface PageSideBarProps {
+  items?: MenuItem[];
+  selectedItemIndex?: number;
+  onMenuItemClick?: (menuIndex: number) => void;
+}
+
+const PageSideBar: FC<PageSideBarProps> = ({
+  items,
+  selectedItemIndex = 0,
+  onMenuItemClick,
+}) => {
   return (
     <nav className="sidebar">
       <div className="sidebar-header">
@@ -16,36 +26,19 @@ const PageSideBar: FC = () => {
       </div>
       <div className="sidebar-body">
         <ul className="nav">
-          <li className="nav-item active">
-            <Link to="" className="nav-link">
-              <i className="link-icon" data-feather="box" />
-              <span className="link-title">Dashboard</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="" className="nav-link">
-              <i className="link-icon" data-feather="user" />
-              <span className="link-title">Profile</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="" className="nav-link">
-              <i className="link-icon" data-feather="users" />
-              <span className="link-title">Partners</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="" className="nav-link">
-              <i className="link-icon" data-feather="book-open" />
-              <span className="link-title">Accounting</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="" className="nav-link">
-              <i className="link-icon" data-feather="settings" />
-              <span className="link-title">Business settings</span>
-            </Link>
-          </li>
+          {(items ?? []).map((item, index) => (
+            <li
+              className={`nav-item ${
+                selectedItemIndex === index ? "active" : ""
+              }`}
+              onClick={() => onMenuItemClick?.(index)}
+            >
+              <Link to={item.route} className="nav-link">
+                <i className="link-icon" data-feather={item.featherIcon} />
+                <span className="link-title">{item.title}</span>
+              </Link>
+            </li>
+          ))}
           {/* <li className="nav-item nav-category">web apps</li>
           <li className="nav-item">
             <a
